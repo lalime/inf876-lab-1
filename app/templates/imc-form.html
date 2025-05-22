@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul de l'IMC</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Calculateur d'IMC</h2>
+        <form method="post">
+            <label for="poids">Poids (kg) :</label>
+            <input type="number" name="poids" required>
+            <label for="taille">Taille (m) :</label>
+            <input type="number" name="taille" step="0.01" required>
+            <button type="submit">Calculer</button>
+        </form>
+        {% if imc %}
+            <p>Votre IMC est : <strong>{{ imc }}</strong></p>
+        {% endif %}
+    </div>
+</body>
+</html>
