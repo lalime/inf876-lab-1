@@ -12,7 +12,7 @@ Ce projet est une **application web** permettant aux utilisateurs de calculer le
 ## ⚙️ Installation
 1. **Clonez le repo** :
    ```bash
-   git clone https://github.com/votre-repo/imc-app.git
+   git clone https://github.com/lalime/inf876-lab-1.git
    cd imc-app
     ```
 
