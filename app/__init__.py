@@ -1,6 +1,6 @@
 # import os
 from flask import Flask, send_file, render_template, request
-from app.routes.main import main_bp
+from app.main import main_bp
 
 def create_app():
     app = Flask(__name__)
