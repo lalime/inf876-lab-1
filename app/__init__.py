@@ -1,14 +1,10 @@
-# import os
-from flask import Flask, send_file, render_template, request
-from app.main import main_bp
+from flask import Flask
 
 def create_app():
     app = Flask(__name__)
+
+    # 👇 Le bon import si imc_routes.py contient un Blueprint
+    from app.routes.imc_routes import main_bp
     app.register_blueprint(main_bp)
+
     return app
-
-def calcul_imc(poids, taille):
-    return round(poids / (taille ** 2), 2)
-
-# def main():
-#    app.run(port=int(os.environ.get('PORT', 80)))

@@ -22,18 +22,6 @@ app = Flask(__name__)
 app.secret_key = "bzkdjboizehboizheobizebzeoihbzeohbzoebh"
 main_bp = Blueprint('main', __name__)
 
-# ...toutes tes routes @main_bp.route...
-
-# Enregistre le blueprint sur l'app Flask
-
-
-
-
-# Assurez-vous que l'app Firebase est initialisée (copiez/collez le bloc d'initialisation ici si vous ne l'avez pas déjà en dehors des routes)
-# cred = credentials.Certificate('chemin/vers/votre/cle-service.json')
-# if not firebase_admin._apps:
-#     firebase_admin.initialize_app(cred)
-# db = firestore.client()
 
 
 # Route pour afficher le formulaire d'inscription (ou le rendre)
