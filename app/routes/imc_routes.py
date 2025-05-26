@@ -5,22 +5,27 @@ from firebase_admin import auth # Importez auth aussi pour l'authentification
 from firebase_admin import credentials, auth, firestore
 from flask_session import Session
 
+from app.services.imc_service import ImcService
+import app.services.database_handler as db_handler
+
 # from werkzeug.security import generate_password_hash, check_password_hash # Potentiellement utile mais pas avec l'approche direct-auth
 
 # ... (Initialisation Firebase Admin SDK comme vu précédemment) ...
 
 # Remplacez 'chemin/vers/votre/cle-service.json' par le chemin réel de votre fichier
-cred = credentials.Certificate('imcalcultor-firebase-adminsdk-fbsvc-0629222380.json')
-firebase_admin.initialize_app(cred)
+
 
 # Obtenez une référence vers la base de données Firestore
 db = firestore.client()
 
 # Vous pouvez maintenant utiliser 'db' pour interagir avec Firestore
 # et 'auth' (via firebase_admin.auth) pour gérer les utilisateurs Auth
-app = Flask(__name__)
-app.secret_key = "bzkdjboizehboizheobizebzeoihbzeohbzoebh"
+
+
 main_bp = Blueprint('main', __name__)
+
+imc_service = ImcService()
+
 
 
 
@@ -41,12 +46,6 @@ def signup():
                 password=password # ATTENTION: Envoyer le mot de passe en clair comme ça n'est pas recommandé pour un front-end public. Utilisez l'approche Jetons ID !
             )
             print(f'Utilisateur créé avec succès : {user.uid}')
-
-            # Optionnel: Stocker des infos supplémentaires dans Firestore lors de l'inscription
-            # db.collection('users').document(user.uid).set({
-            #    'email': email,
-            #    'createdAt': firestore.SERVER_TIMESTAMP
-            # })
 
             return "Inscription réussie ! Vous pouvez maintenant vous connecter."
         except Exception as e:
@@ -111,8 +110,17 @@ def calcul_imc():
     if request.method == 'POST':
         poids = float(request.form['poids'])
         taille = float(request.form['taille'])
-        # imc = imc_service.calcul_imc(poids, taille)
-        imc = round(poids / (taille ** 2), 2)
+        imc = imc_service.calcul_imc(poids, taille)
+
+        # Enregistrer l'IMC dans Firestore
+        db_handler.save_imc(
+            user_id=session.get('user_id', 'unknown'),
+            imc_value=imc,
+            mail=request.form.get('email', 'unknown'), 
+            poids=poids,
+            taille=taille
+        )
+
     return render_template('imc-form.html', imc=imc)
 
 
@@ -170,9 +178,3 @@ def index():
     else:
         return redirect(url_for('main.login'))
 
-app.register_blueprint(main_bp)
-
-
-if __name__ == "__main__":
-    app.debug = True
-    app.run()
