@@ -9,10 +9,13 @@
 <body>
     <nav>
         <ul>
+            {% if not session['user_id'] %}
             <li><a href="{{ url_for('auth.login') }}">Connexion</a></li>
             <li><a href="{{ url_for('auth.register') }}">Inscription</a></li>
+            {% else %}
             <li><a href="{{ url_for('profile.profile') }}">Profil</a></li>
             <li><a href="{{ url_for('profile.history') }}">Historique</a></li>
+            {% endif %}
         </ul>
     </nav>
 
@@ -26,49 +29,5 @@
 
     {% block content %}{% endblock %}
     
-    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
-    <script>
-      console.log("Script chargé !");
-      const firebaseConfig = {
-        apiKey: "AIzaSyBnRxijV8z7vWBqfU2v9_Bx2QAirJxnP8o",
-        authDomain: "imcalcultor.firebaseapp.com",
-        projectId: "imcalcultor",
-        storageBucket: "imcalcultor.firebasestorage.app",
-        messagingSenderId: "215614482313",
-        appId: "1:215614482313:web:80c7dcc267d24993472358",
-        measurementId: "G-YCRYBZSHK5"
-      };
-      firebase.initializeApp(firebaseConfig);
-      console.log("Script chargé 2!");
-      document.getElementById('login-form').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const email = document.querySelector('[name="email"]').value;
-        const password = document.querySelector('[name="password"]').value;
-        console.log("Email:", email);
-        try {
-          console.log("test");
-          const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
-          console.log("Utilisateur connecté :", userCredential.user);
-          const idToken = await userCredential.user.getIdToken();
-          console.log("Token d'identification :", idToken);
-          console.log("ID Token:", idToken);
-          // Crée un formulaire caché pour envoyer le token au backend
-          const form = document.createElement('form');
-          console.log("Formulaire créé !");
-          form.method = 'POST';
-          form.action = '/login';
-          form.innerHTML = `<input type="hidden" name="idToken" value="${idToken}">`;
-          console.log("Formulaire créé 2 !");
-          document.body.appendChild(form);
-          console.log("Formulaire créé 3 !");
-          form.submit();
-          console.log("Formulaire soumis !");
-        } catch (error) {
-          console.error('Erreur de connexion JS :', error);
-          alert('Erreur de connexion : ' + error.message);
-        }
-      });
-    </script>
 </body>
 </html>

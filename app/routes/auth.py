@@ -1,9 +1,7 @@
 from flask import Flask, Blueprint, render_template, request, redirect, url_for, session, flash
-# from flask import session*
-from pprint import pprint
+import firebase_admin
+from firebase_admin import firestore, auth, credentials
 import logging
-
-logging.basicConfig(level=logging.DEBUG)
 
 auth_bp = Blueprint('auth', __name__)
 
@@ -15,22 +13,22 @@ def login():
         email = request.form.get('email')
         password = request.form.get('password')
         id_token = request.form.get('idToken')
+        f_error = request.form.get('error')
 
         if not id_token:
-            error = "Jeton d'identité requis"
+            error = f"Echec de connexion : Login ou mot de passe incorrect"
         else :
             try:
                 decoded_token = auth.verify_id_token(id_token)
+
                 uid = decoded_token['uid']
                 session['user_id'] = uid
                 flash(f'Utilisateur {uid} connecté avec succès', "success")
-                # print(f'Utilisateur {uid} connecté avec succès')
+
                 return redirect(url_for('profile.profile'))
             except Exception as e:
                 error = f"Echec de connexion : {e}"
                 # print(f"Echec de connexion : {e}")
-                flash(error, "error")
-                return render_template('login.html', error=error)
         
     return render_template('login.html', error=error)
 
@@ -38,7 +36,7 @@ def login():
 def register():
     error = None
     if request.method == 'POST':
-        name = request.form['name']
+        name = request.form['display_name']
         email = request.form['email']
         password = request.form['password']
         # Ajoutez ici l'enregistrement en base de données

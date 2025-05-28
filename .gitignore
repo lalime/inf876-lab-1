@@ -1,6 +1,7 @@
 .venv
 __pycache__/
 */__pycache__/*
-
+flask_session/*
 imcalcultor-firebase-adminsdk-fbsvc-0629222380.json
 *.pyc
+config.json

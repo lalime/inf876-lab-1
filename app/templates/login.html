@@ -5,10 +5,32 @@
     {% if error %}
         <p style="color: red;">{{ error }}</p>
     {% endif %}
-    <form action="{{ url_for('auth.login') }}" method="POST">
+    <form id="login-form" action="{{ url_for('auth.login') }}" method="POST">
         <input type="email" name="email" placeholder="Email" required>
         <input type="password" name="password" placeholder="Mot de passe" required>
-        <button type="submit">Se connecter</button>
+        <input type="hidden" name="idToken" value="">
+        <input type="hidden" name="error" value="">
+        <button id="submit-form" type="submit">Se connecter</button>
     </form>
 </div>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+<script>
+  console.log("Script chargé !");
+  const firebaseConfig = {
+    apiKey: "AIzaSyBnRxijV8z7vWBqfU2v9_Bx2QAirJxnP8o",
+    authDomain: "imcalcultor.firebaseapp.com",
+    projectId: "imcalcultor",
+    storageBucket: "imcalcultor.firebasestorage.app",
+    messagingSenderId: "215614482313",
+    appId: "1:215614482313:web:80c7dcc267d24993472358",
+    measurementId: "G-YCRYBZSHK5"
+  };
+  
+  firebase.initializeApp(firebaseConfig);
+  console.log("Script chargé 2!");
+</script>
+<script type="module" src="{{ url_for('static', filename='js/auth.js') }}"></script>
+
 {% endblock %}
