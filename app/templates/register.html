@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container">
-    <h2>Connexion</h2>
+    <h2>Inscription</h2>
     {% if error %}
         <p style="color: red;">{{ error }}</p>
     {% endif %}
-    <form action="{{ url_for('auth.login') }}" method="POST">
+    <form action="{{ url_for('auth.register') }}" method="POST">
+        <input type="text" name="name" placeholder="Nom" required>
         <input type="email" name="email" placeholder="Email" required>
         <input type="password" name="password" placeholder="Mot de passe" required>
-        <button type="submit">Se connecter</button>
+        <button type="submit">S'inscrire</button>
     </form>
 </div>
 {% endblock %}

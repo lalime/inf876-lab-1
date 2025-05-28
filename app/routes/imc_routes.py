@@ -75,7 +75,7 @@ def login():
             uid = decoded_token['uid']
             session['user_id'] = uid
             print(f'Utilisateur {uid} connecté avec succès')
-            return redirect(url_for('main.profile'))
+            return redirect(url_for('profile.profile'))
         except Exception as e:
             print(f"Erreur de connexion : {e}")
             return f"Erreur lors de la connexion : {e}", 401
@@ -88,7 +88,7 @@ def login():
 def logout():
     # Supprime l'UID de la session Flask
     session.pop('user_id', None)
-    return redirect(url_for('main.login')) # Redirige vers la page de connexion
+    return redirect(url_for('auth.login')) # Redirige vers la page de connexion
 
 # Exemple de route qui nécessite l'authentification
 @main_bp.route('/profile')
@@ -99,7 +99,7 @@ def profile():
         return redirect(url_for('main.calcul_imc'))
     else:
         # Si l'UID n'est pas dans la session, l'utilisateur n'est pas connecté
-        return redirect(url_for('main.login')) # Redirige vers la page de connexion
+        return redirect(url_for('auth.login')) # Redirige vers la page de connexion
 
 # --- Routes pour l'IMC ---
 
@@ -128,7 +128,7 @@ def calcul_imc():
 @main_bp.route('/historique_imc')
 def historique_imc():
      if 'user_id' not in session:
-        return redirect(url_for('main.login'))
+        return redirect(url_for('auth.login'))
 
      uid = session['user_id']
 
@@ -174,7 +174,7 @@ def historique_imc():
 @main_bp.route('/')
 def index():
     if 'user_id' in session:
-        return redirect(url_for('main.profile'))
+        return redirect(url_for('profile.profile'))
     else:
-        return redirect(url_for('main.login'))
+        return redirect(url_for('auth.login'))
 
