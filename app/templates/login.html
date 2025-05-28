@@ -12,6 +12,7 @@
         <input type="hidden" name="error" value="">
         <button id="submit-form" type="submit">Se connecter</button>
     </form>
+    <p>Pas encore de compte ? <a href="{{ url_for('auth.register') }}">Inscrivez-vous</a></p>
 </div>
 
 <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>

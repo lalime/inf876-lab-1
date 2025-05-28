@@ -9,6 +9,9 @@ main_bp = Blueprint('main', __name__)
 
 @main_bp.route('/', methods=['GET', 'POST'])
 def home():
+    """
+    Accueil et calcul IMC de l'utilisateur
+    """
     imc = None
     if request.method == 'POST':
         poids = float(request.form['poids'])
@@ -25,18 +28,3 @@ def home():
         )
 
     return render_template('imc-form.html', imc=imc)
-
-""" # Ajoutez ici la vérification des identifiants
-if email != "test@example.com" or password != "1234":
-error = "Email ou mot de passe incorrect."
-else:
-session['user'] = email
-return redirect(url_for('profile.profile'))
-return render_template('login.html', error=error) """
-
-""" if len(password) < 6:
-            error = "Le mot de passe doit contenir au moins 6 caractères."
-        else:
-            flash("Inscription réussie ! Connectez-vous.", "success")
-            return redirect(url_for('auth.login'))
-    return render_template('register.html', error=error) """

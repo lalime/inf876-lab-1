@@ -7,6 +7,9 @@ auth_bp = Blueprint('auth', __name__)
 
 @auth_bp.route('/login', methods=['GET', 'POST'])
 def login():
+    """
+    Formulaire de connexion utilisateur
+    """
     error = None
     
     if request.method == 'POST':
@@ -34,6 +37,9 @@ def login():
 
 @auth_bp.route('/register', methods=['GET', 'POST'])
 def register():
+    """
+    Formulaire de création de profil utilisateur
+    """
     error = None
     if request.method == 'POST':
         name = request.form['display_name']
@@ -61,3 +67,13 @@ def register():
 
     return render_template('register.html', error=error)
 
+
+# Route pour la déconnexion
+@auth_bp.route('/logout')
+def logout():
+    """
+    Deconnexion et suppression de la session de l'utilisateur
+    """
+    # Supprime l'UID de la session Flask
+    session.pop('user_id', None)
+    return redirect(url_for('auth.login')) # Redirige vers la page de connexion
