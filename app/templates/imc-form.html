@@ -15,8 +15,8 @@
             <label for="taille">Taille (m) :</label>
             <input type="number" name="taille" step="0.01" required>
             <button type="submit">Calculer</button>
-            <a href="/logout" class="logout-button">Déconnexion</a>
-            <a href="/profile" class="profile-button">Mon Profil</a>
+            <a href="{{ url_for('main.logout') }}" class="logout-button">Déconnexion</a>
+            <a href="{{ url_for('main.profil') }}" class="profile-button">Mon Profil</a>
         </form>
         
         {% if imc %}

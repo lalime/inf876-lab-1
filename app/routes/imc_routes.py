@@ -72,21 +72,24 @@ def login():
 
         try:
             decoded_token = auth.verify_id_token(id_token)
+            print(decoded_token)
             uid = decoded_token['uid']
             session['user_id'] = uid
+            session['email'] = decoded_token.get('email', 'unknown')  # Stocke l'email si disponible
             print(f'Utilisateur {uid} connecté avec succès')
-            return redirect(url_for('main.profile'))
+            return redirect(url_for('main.calcul_imc'))
         except Exception as e:
             print(f"Erreur de connexion : {e}")
             return f"Erreur lors de la connexion : {e}", 401
 
-    # Méthode GET: Afficher un formulaire de connexion simple (HTML)
-    return redirect(url_for('main.calcul_imc'))
+    # Méthode GET
+    return render_template('login.html')
 
 # Route pour la déconnexion
 @main_bp.route('/logout')
 def logout():
     # Supprime l'UID de la session Flask
+    print("oui")
     session.pop('user_id', None)
     return redirect(url_for('main.login')) # Redirige vers la page de connexion
 
@@ -111,17 +114,29 @@ def calcul_imc():
         poids = float(request.form['poids'])
         taille = float(request.form['taille'])
         imc = imc_service.calcul_imc(poids, taille)
-
+        print("SESSION EMAIL:", session.get('email'))
         # Enregistrer l'IMC dans Firestore
         db_handler.save_imc(
             user_id=session.get('user_id', 'unknown'),
             imc_value=imc,
-            mail=request.form.get('email', 'unknown'), 
+            mail=session.get('email', 'unknown'), 
             poids=poids,
             taille=taille
         )
 
     return render_template('imc-form.html', imc=imc)
+
+@main_bp.route('/profil', methods=['GET', 'POST'])
+def profil():
+    email = None
+    if request.method == 'POST':
+        session['email'] = request.form.get('email')
+        email = session['email']
+    else:
+        email = session.get('email')  # Récupère l'email de la session si présent
+
+
+    return render_template('profil.html', email=email)
 
 
 # Route pour afficher l'historique IMC (nécessite la connexion)
