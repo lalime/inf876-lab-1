@@ -14,6 +14,10 @@ logging.config.fileConfig('logging_config.ini')
 
 def create_app():
     app = Flask(__name__)
+    # Load Firebase Admin SDK
+    if not firebase_admin._apps:
+        cred = credentials.Certificate("config.json")
+        firebase_admin.initialize_app(cred)
 
     app.secret_key = "bzkdjboizehboizheobizebzeoihbzeohbzoebh"
 
@@ -23,9 +27,7 @@ def create_app():
     app.config['SESSION_COOKIE_HTTPONLY'] = True  # Protect against XSS
     app.config.update(SESSION_COOKIE_SAMESITE="None", SESSION_COOKIE_SECURE=True)
 
-    # Load Firebase Admin SDK
-    cred = credentials.Certificate("config.json")
-    firebase_admin.initialize_app(cred)
+    
 
     app.register_blueprint(auth_bp, url_prefix='/auth')
     app.register_blueprint(profile_bp, url_prefix='/profile')

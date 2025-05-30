@@ -1,0 +1,58 @@
+2025-05-30 11:33:24 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-30 11:33:24 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-30 11:33:26 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 11:33:26] "GET / HTTP/1.1" 200 -
+2025-05-30 11:33:26 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 11:33:26] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-05-30 11:33:31 - app - ERROR - Exception on / [POST]
+Traceback (most recent call last):
+  File "C:\Users\alexa\Documents\GitHub\inf876-lab-1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alexa\Documents\GitHub\inf876-lab-1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alexa\Documents\GitHub\inf876-lab-1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alexa\Documents\GitHub\inf876-lab-1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\alexa\Documents\GitHub\inf876-lab-1\app\routes\main.py", line 19, in home
+    imc = imc_service.calcul_imc(poids, taille)
+          ^^^^^^^^^^^
+NameError: name 'imc_service' is not defined
+2025-05-30 11:33:31 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 11:33:31] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+2025-05-30 11:33:38 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 11:33:38] "GET / HTTP/1.1" 200 -
+2025-05-30 12:03:15 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-30 12:03:15 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-30 12:03:26 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:03:26] "POST / HTTP/1.1" 200 -
+2025-05-30 12:03:26 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:03:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-30 12:03:44 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:03:44] "GET /auth/login HTTP/1.1" 200 -
+2025-05-30 12:03:45 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:03:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-30 12:03:45 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:03:45] "GET /static/js/auth.js HTTP/1.1" 200 -
+2025-05-30 12:03:47 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:03:47] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2025-05-30 12:03:47 - root - DEBUG - Profile start: <SecureCookieSession {'_flashes': [('success', 'Utilisateur hOKvg2JYW1VPYQbCj2zRtXZ0bG93 connecté avec succès')], 'user_id': 'hOKvg2JYW1VPYQbCj2zRtXZ0bG93'}>
+2025-05-30 12:03:48 - root - DEBUG - User ********* : <firebase_admin._user_mgt.UserRecord object at 0x00000200CAC4D850>
+2025-05-30 12:03:48 - root - DEBUG - User data in profile : {'name': 'None', 'email': 'alexandre16600@gmail.com'}
+2025-05-30 12:03:48 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:03:48] "GET /profile/ HTTP/1.1" 200 -
+2025-05-30 12:03:48 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:03:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-30 12:03:49 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:03:49] "GET / HTTP/1.1" 200 -
+2025-05-30 12:03:49 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:03:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-30 12:03:54 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:03:54] "POST / HTTP/1.1" 200 -
+2025-05-30 12:03:54 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:03:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-30 12:03:56 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:03:56] "GET /profile/history HTTP/1.1" 200 -
+2025-05-30 12:03:56 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:03:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-30 12:07:12 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:07:12] "GET /profile/history HTTP/1.1" 200 -
+2025-05-30 12:07:12 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:07:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-30 12:07:13 - root - DEBUG - Profile start: <SecureCookieSession {'user_id': 'hOKvg2JYW1VPYQbCj2zRtXZ0bG93'}>
+2025-05-30 12:07:13 - root - DEBUG - User ********* : <firebase_admin._user_mgt.UserRecord object at 0x00000200CAC2C450>
+2025-05-30 12:07:13 - root - DEBUG - User data in profile : {'name': 'None', 'email': 'alexandre16600@gmail.com'}
+2025-05-30 12:07:13 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:07:13] "GET /profile/ HTTP/1.1" 200 -
+2025-05-30 12:07:14 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:07:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-30 12:07:22 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:07:22] "GET / HTTP/1.1" 200 -
+2025-05-30 12:07:22 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:07:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-30 12:07:35 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:07:35] "POST / HTTP/1.1" 200 -
+2025-05-30 12:07:35 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:07:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-05-30 12:09:11 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:09:11] "GET /profile/history HTTP/1.1" 200 -
+2025-05-30 12:09:11 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:09:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
