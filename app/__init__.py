@@ -13,6 +13,8 @@ logging.config.fileConfig('logging_config.ini')
 
 
 def create_app():
+    """ 
+    """
     app = Flask(__name__)
     # Load Firebase Admin SDK
     if not firebase_admin._apps:

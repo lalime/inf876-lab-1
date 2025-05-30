@@ -1,14 +1,42 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container">
-    <h2>Historique des Actions</h2>
-    <p>Voici les dernières actions enregistrées :</p>
-    <ul>
-        <li>Inscription réussie - 12 Mai 2025</li>
-        <li>Connexion effectuée - 14 Mai 2025</li>
-        <li>Modification du profil - 15 Mai 2025</li>
-    </ul>
-    <button onclick="clearHistory()">Effacer l'historique</button>
+    <h2>Votre Historique IMC</h2>
+    <p>Voici les dernières Historique enregistrées :</p>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>IMC</th>
+                <th>Poids (kg)</th>
+                <th>Taille (m)</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% if history %}
+            {% for item in history %}
+
+            <tr>
+                <td>{{ item.get('date', 'N/A') }}</td>
+                <td>{{ "%.2f"|format(item.get('bmiValue', 0)) }}</td>
+                <td>{{ item.get('weight', 'N/A') }}</td>
+                <td>{{ item.get('height', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <td colspan="4" class="empty-message">
+                    Date: {item.get('date', 'N/A')}, IMC: {item.get('bmiValue', 'N/A'):.2f}, Poids: {item.get('weight', 'N/A')} kg, Taille: {item.get('height', 'N/A')} m
+                </td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="4" class="empty-message">Aucune donnée disponible</td>
+            </tr>
+        {% endif %}
+    </tbody>
+</table>
+    <button onclick="clearHistory()" disabled>Effacer l'historique</button>
 </div>
 
 <script>

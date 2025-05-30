@@ -2,7 +2,7 @@ from flask import Flask, Blueprint, render_template, request, redirect, url_for,
 import logging
 from app.services.user import get_user_details, updated_user
 import logging
-from app.services.user import get_user_details, updated_user
+# from app.services.database_handler import get_user_imc
 
 profile_bp = Blueprint('profile', __name__)
 
@@ -43,4 +43,29 @@ def history():
     """
     Afficher l'historique IMC d'un utilisateur
     """
-    return render_template('history.html')
+    if 'user_id' not in session:
+        return redirect(url_for('auth.login'))
+
+    uid = session['user_id']
+    entry_data = []
+
+    try:
+        # user_doc_ref = db.collection('users').document(uid)
+        # bmi_history_ref = user_doc_ref.collection('bmiHistory')
+
+        # Récupérer les entrées d'historique, triées par date descendante
+        history_entries = [] # bmi_history_ref.order_by('date', direction=firestore.Query.DESCENDING).stream()
+
+        history_list = []
+        for entry in history_entries:
+            entry_data = entry.to_dict()
+            # Formater la date si nécessaire
+            if 'date' in entry_data:
+                # Firestore timestamp to Python datetime
+                entry_data['date'] = entry_data['date'].strftime('%Y-%m-%d %H:%M:%S')
+            history_list.append(entry_data)
+
+    except Exception as e:
+        logging.error(f"Erreur lors de la récupération de l'historique : {e}")
+
+    return render_template('history.html', history= entry_data)

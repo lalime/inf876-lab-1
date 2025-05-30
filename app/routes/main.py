@@ -1,11 +1,10 @@
 from flask import Flask, Blueprint, render_template, request, redirect, url_for, session, flash
-# from flask import session*
-from pprint import pprint
-import logging
+import firebase_admin
+from firebase_admin import credentials, firestore
+
 from app.services.imc_service import ImcService
 import app.services.database_handler as db_handler
 
-logging.basicConfig(level=logging.DEBUG)
 
 main_bp = Blueprint('main', __name__)
 imc_service = ImcService()
