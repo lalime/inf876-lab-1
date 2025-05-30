@@ -26,7 +26,7 @@ def home():
         db_handler.save_imc(
             user_id=session.get('user_id', 'unknown'),
             imc_value=imc,
-            mail=request.form.get('email', 'unknown'), 
+            mail=session.get('email', 'unknown'), 
             poids=poids,
             taille=taille
         )
