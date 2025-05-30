@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2>Historique des Actions</h2>
+    <p>Voici les dernières actions enregistrées :</p>
+    <ul>
+        <li>Inscription réussie - 12 Mai 2025</li>
+        <li>Connexion effectuée - 14 Mai 2025</li>
+        <li>Modification du profil - 15 Mai 2025</li>
+    </ul>
+    <button onclick="clearHistory()">Effacer l'historique</button>
+</div>
+
+<script>
+function clearHistory() {
+    alert("Historique effacé !");
+    // Ajoutez ici la logique de suppression côté serveur
+}
+</script>
+
+{% endblock %}
