@@ -19,14 +19,9 @@
 
             <tr>
                 <td>{{ item.get('date', 'N/A') }}</td>
-                <td>{{ "%.2f"|format(item.get('bmiValue', 0)) }}</td>
-                <td>{{ item.get('weight', 'N/A') }}</td>
-                <td>{{ item.get('height', 'N/A') }}</td>
-            </tr>
-            <tr>
-                <td colspan="4" class="empty-message">
-                    Date: {item.get('date', 'N/A')}, IMC: {item.get('bmiValue', 'N/A'):.2f}, Poids: {item.get('weight', 'N/A')} kg, Taille: {item.get('height', 'N/A')} m
-                </td>
+                <td>{{ "%.2f"|format(item.get('imc', 0)) }}</td>
+                <td>{{ item.get('poids', 'N/A') }}</td>
+                <td>{{ item.get('taille', 'N/A') }}</td>
             </tr>
             {% endfor %}
         {% else %}

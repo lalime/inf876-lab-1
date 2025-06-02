@@ -29,4 +29,5 @@ def get_user_imc(user_id):
     Récupère l'historique IMC d'un utilisateur spécifique.
     """
     imcs = db.collection("imc_calculs").where("user_id", "==", user_id).stream()
+    
     return [doc.to_dict() for doc in imcs]

@@ -81,3 +81,75 @@ NameError: name 'imc_service' is not defined
 2025-05-30 12:22:23 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:22:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2025-05-30 12:22:27 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:22:27] "POST / HTTP/1.1" 200 -
 2025-05-30 12:22:27 - werkzeug - INFO - 127.0.0.1 - - [30/May/2025 12:22:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-06-02 15:41:55 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-02 15:41:55 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-02 15:42:23 - werkzeug - ERROR - 127.0.0.1 - - [02/Jun/2025 15:42:23] code 400, message Bad request version ('5ð´1.ï|ù¸8\x10\x1bOØd\x07³ÅG+\x98\\¡\x05\x94\x95¼\x91r÷\x10\x01\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+2025-06-02 15:42:23 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 15:42:23] "[31m[1m\x16\x03\x01\x07O\x01\x00\x07K\x03\x03Û»Ä}ýÁ\x8d}¿\x80Ø\x0b4\x89\x8c£¬\x12\x82ämÄEd\x8f\x01'Õá\x85\x19ñ 5ð´1.ï|ù¸8\x10\x1bOØd\x07³ÅG+\x98\\¡\x05\x94\x95¼\x91r÷\x10\x01\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À[0m" 400 -
+2025-06-02 15:42:23 - werkzeug - ERROR - 127.0.0.1 - - [02/Jun/2025 15:42:23] code 400, message Bad request version ('ÍçD?\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+2025-06-02 15:42:23 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 15:42:23] "[31m[1m\x16\x03\x01\x02~\x01\x00\x02z\x03\x03ÒÅ/\x91`\x17óa\x0b»t\x8c\x82\x92®B*-,\x17¹f,\x1ejøT\x86H\x1a]û ,ñ ±\x11(\x1b|\x87B¶BÄV\x04Fp\x9dÉà\x99ÿ+I³«ÿ\x85ÍçD?\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À[0m" 400 -
+2025-06-02 15:42:24 - werkzeug - ERROR - 127.0.0.1 - - [02/Jun/2025 15:42:24] code 400, message Bad request version ('îú-Uðä¢\x94\x12±\'BÊÒL+â9|\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+2025-06-02 15:42:24 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 15:42:24] "[31m[1m\x16\x03\x01\x07O\x01\x00\x07K\x03\x03\x98\x88¥\x1dë/EÐ\x12\x96q(sÏ\x0c3(\x9bô¾ò~\x9fv\x1b\x88\x08zß·WC òz\x1f<'V\x9bk}\x13\x84¬\x1fîú-Uðä¢\x94\x12±'BÊÒL+â9|\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À[0m" 400 -
+2025-06-02 15:42:24 - werkzeug - ERROR - 127.0.0.1 - - [02/Jun/2025 15:42:24] code 400, message Bad request version ('ô¶{º¸\x88+¿ÛÅ\x12õ»u¨Õ²')
+2025-06-02 15:42:24 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 15:42:24] "[31m[1m\x16\x03\x01\x02~\x01\x00\x02z\x03\x03sQ\x1d\x9cf\x91·oÂÅ?þÐ£\x94\x1cêMãÆº3-ÝXói=ÊM\x10Z Í\x1e;×=Î\x85ô¶{º¸\x88+¿ÛÅ\x12õ»u¨Õ²[0m" 400 -
+2025-06-02 15:42:48 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 15:42:48] "GET / HTTP/1.1" 200 -
+2025-06-02 15:42:48 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 15:42:48] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-06-02 15:42:54 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 15:42:54] "GET / HTTP/1.1" 200 -
+2025-06-02 15:42:54 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 15:42:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-06-02 15:42:57 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 15:42:57] "GET /auth/login HTTP/1.1" 200 -
+2025-06-02 15:42:57 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 15:42:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-06-02 15:42:57 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 15:42:57] "GET /static/js/auth.js HTTP/1.1" 200 -
+2025-06-02 15:42:59 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 15:42:59] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2025-06-02 15:42:59 - root - DEBUG - Profile start: <SecureCookieSession {'_flashes': [('success', 'Utilisateur hOKvg2JYW1VPYQbCj2zRtXZ0bG93 connecté avec succès')], 'user_id': 'hOKvg2JYW1VPYQbCj2zRtXZ0bG93'}>
+2025-06-02 15:43:01 - root - DEBUG - User ********* : <firebase_admin._user_mgt.UserRecord object at 0x000001CEB08633D0>
+2025-06-02 15:43:01 - root - DEBUG - User data in profile : {'name': 'None', 'email': 'alexandre16600@gmail.com'}
+2025-06-02 15:43:01 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 15:43:01] "GET /profile/ HTTP/1.1" 200 -
+2025-06-02 15:43:01 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 15:43:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-06-02 15:43:12 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 15:43:12] "GET /profile/history HTTP/1.1" 200 -
+2025-06-02 15:43:12 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 15:43:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-06-02 16:04:29 - root - DEBUG - Profile start: <SecureCookieSession {'user_id': 'hOKvg2JYW1VPYQbCj2zRtXZ0bG93'}>
+2025-06-02 16:04:30 - root - DEBUG - User ********* : <firebase_admin._user_mgt.UserRecord object at 0x000001CEB0C6A2D0>
+2025-06-02 16:04:30 - root - DEBUG - User data in profile : {'name': 'None', 'email': 'alexandre16600@gmail.com'}
+2025-06-02 16:04:30 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:04:30] "GET /profile/ HTTP/1.1" 200 -
+2025-06-02 16:04:30 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:04:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-06-02 16:04:31 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:04:31] "GET / HTTP/1.1" 200 -
+2025-06-02 16:04:31 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:04:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-06-02 16:04:37 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:04:37] "POST / HTTP/1.1" 200 -
+2025-06-02 16:04:37 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:04:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-06-02 16:04:41 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:04:41] "GET /profile/history HTTP/1.1" 200 -
+2025-06-02 16:04:41 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:04:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-06-02 16:10:58 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:10:58] "GET /profile/history HTTP/1.1" 200 -
+2025-06-02 16:10:58 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:10:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-06-02 16:11:30 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-02 16:11:30 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-02 16:11:33 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:11:33] "GET /profile/history HTTP/1.1" 200 -
+2025-06-02 16:11:33 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:11:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-06-02 16:15:03 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:15:03] "GET / HTTP/1.1" 200 -
+2025-06-02 16:15:03 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:15:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-06-02 16:15:06 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:15:06] "GET /auth/login HTTP/1.1" 200 -
+2025-06-02 16:15:06 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:15:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-06-02 16:15:06 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:15:06] "[36mGET /static/js/auth.js HTTP/1.1[0m" 304 -
+2025-06-02 16:15:09 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:15:09] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2025-06-02 16:15:09 - root - DEBUG - Profile start: <SecureCookieSession {'_flashes': [('success', 'Utilisateur hOKvg2JYW1VPYQbCj2zRtXZ0bG93 connecté avec succès')], 'user_id': 'hOKvg2JYW1VPYQbCj2zRtXZ0bG93'}>
+2025-06-02 16:15:10 - root - DEBUG - User ********* : <firebase_admin._user_mgt.UserRecord object at 0x000001C0B197B850>
+2025-06-02 16:15:10 - root - DEBUG - User data in profile : {'name': 'None', 'email': 'alexandre16600@gmail.com'}
+2025-06-02 16:15:10 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:15:10] "GET /profile/ HTTP/1.1" 200 -
+2025-06-02 16:15:10 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:15:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-06-02 16:15:12 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:15:12] "GET /profile/history HTTP/1.1" 200 -
+2025-06-02 16:15:12 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:15:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-06-02 16:15:20 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-02 16:15:20 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-02 16:15:26 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:15:26] "GET /profile/history HTTP/1.1" 200 -
+2025-06-02 16:15:26 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:15:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-06-02 16:16:37 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-02 16:16:37 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-02 16:16:39 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:16:39] "GET /profile/history HTTP/1.1" 200 -
+2025-06-02 16:16:39 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:16:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-06-02 16:17:52 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-02 16:17:52 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-02 16:17:57 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:17:57] "GET /profile/history HTTP/1.1" 200 -
+2025-06-02 16:17:57 - werkzeug - INFO - 127.0.0.1 - - [02/Jun/2025 16:17:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
