@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: imc-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: imc-app
+  template:
+    metadata:
+      labels:
+        app: imc-app
+    spec:
+      containers:
+      - name: imc-app
+        image: mon-app-imc:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5000

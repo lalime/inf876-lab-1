@@ -1,6 +1,8 @@
 # Dev environment
 pip
 autopep8
+firebase-admin
+flask-session
 
 # App
 flask

@@ -8,18 +8,8 @@ from flask_session import Session
 from app.services.imc_service import ImcService
 import app.services.database_handler as db_handler
 
-# from werkzeug.security import generate_password_hash, check_password_hash # Potentiellement utile mais pas avec l'approche direct-auth
 
-# ... (Initialisation Firebase Admin SDK comme vu précédemment) ...
-
-# Remplacez 'chemin/vers/votre/cle-service.json' par le chemin réel de votre fichier
-
-
-# Obtenez une référence vers la base de données Firestore
 db = firestore.client()
-
-# Vous pouvez maintenant utiliser 'db' pour interagir avec Firestore
-# et 'auth' (via firebase_admin.auth) pour gérer les utilisateurs Auth
 
 
 main_bp = Blueprint('main', __name__)
